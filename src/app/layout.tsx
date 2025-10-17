@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
-import {
-  Inter_Tight,
-  Playfair_Display,
-  Roboto,
-  Open_Sans,
-  Lato,
-  Montserrat,
-  Poppins,
-  Raleway,
-  Ubuntu,
-  Nunito
-} from "next/font/google";
+import { Inter_Tight, Playfair_Display, Roboto, Open_Sans, Lato, Montserrat, Poppins, Raleway, Ubuntu, Nunito } from "next/font/google";
 import "./globals.css";
-import {PostHogWrapper} from "@/components/PostHogWrapper";
+import { PostHogWrapper } from "@/components/PostHogWrapper";
 import AuroraBackground from "@/components/background/AuroraBackground";
 
 const interTight = Inter_Tight({
@@ -82,7 +71,9 @@ export const metadata: Metadata = {
     title: "IT Corp | Leading IT Solutions",
     description: "Discover top-tier IT solutions supporting your business growth.",
     siteName: "IT Corp",
-    images: [{ "url": "https://images.pexels.com/photos/34332317/pexels-photo-34332317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" }],
+    images: [
+      "https://images.pexels.com/photos/34332317/pexels-photo-34332317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
     type: "website",
     url: "https://images.pexels.com/photos/34332317/pexels-photo-34332317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
@@ -90,7 +81,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "IT Corp | Leading IT Solutions",
     description: "Discover top-tier IT solutions supporting your business growth.",
-    images: ["https://images.pexels.com/photos/34332317/pexels-photo-34332317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"]
+    images: [
+      "https://images.pexels.com/photos/34332317/pexels-photo-34332317.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ]
   },
   robots: {
     index: true,
@@ -105,13 +98,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <PostHogWrapper>
-      <body
+      <PostHogWrapper>
+        <body
           className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}
-      >
-      <AuroraBackground />
-      {children}
-      
+        >
+          <AuroraBackground />
+          {children}
+        
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -950,7 +943,7 @@ export default function RootLayout({
           }}
         />
       </body>
-    </PostHogWrapper>
+      </PostHogWrapper>
     </html>
   );
 }
